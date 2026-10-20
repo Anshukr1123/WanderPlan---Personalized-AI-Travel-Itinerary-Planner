@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing and coverage
+coverage/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Production and build outputs
+dist/
+build/
+.vercel/
+
+# Python cache and environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+env/
+venv/
+ENV/
+
+# Environment files and credentials (CRITICAL: Never commit secrets)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+backend/.env
+backend/.env.local
+!.env.example
+!backend/.env.example
+
+# IDEs and OS files
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp
+*.swo

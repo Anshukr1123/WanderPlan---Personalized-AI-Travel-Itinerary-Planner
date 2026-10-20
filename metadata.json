@@ -1,0 +1,6 @@
+{
+  "name": "WanderPlan - Personalized AI Travel Itinerary Planner",
+  "description": "Production-ready personalized travel itinerary planner powered by Groq AI, Supabase Auth & PostgreSQL, and Unsplash destination imagery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,44 @@
+# ==============================================================================
+# Render Blueprint Specification for WanderPlan Full-Stack Deployment
+# Docs: https://render.com/docs/blueprint-spec
+# ==============================================================================
+services:
+  - type: web
+    name: wanderplan-api
+    runtime: python
+    rootDir: backend
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.12
+      - key: ENVIRONMENT
+        value: production
+      - key: FRONTEND_URL
+        sync: false
+        # Enter your deployed Vercel domain, e.g. https://wanderplan.vercel.app
+      - key: ALLOWED_ORIGINS
+        value: "http://localhost:3000,https://*.vercel.app"
+      - key: GROQ_API_KEY
+        sync: false
+        # Add your Groq API Key from https://console.groq.com/keys
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: UNSPLASH_ACCESS_KEY
+        sync: false
+        # Add your Unsplash Access Key from https://unsplash.com/developers
+      - key: UNSPLASH_APP_NAME
+        value: WanderPlan
+      - key: SUPABASE_URL
+        sync: false
+        # Add your Supabase URL from Project Settings -> API
+      - key: SUPABASE_ANON_KEY
+        sync: false
+        # Add your Supabase Anon Key from Project Settings -> API
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+        # Add your Supabase Service Role Key (kept strictly secure on Render backend)
